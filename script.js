@@ -66,7 +66,7 @@
 
   // Google Signin
   google_signin_btn.on('click', e => {
-  	firebase.auth().signInWithPopup(provider).then(function(result) {
+  	firebase.auth().signInWithPopup(google_provider).then(function(result) {
 		  // This gives you a Google Access Token. You can use it to access the Google API.
 		  var token = result.credential.accessToken;
 		  // The signed-in user info.
@@ -88,7 +88,7 @@
 
   // Facebook Signin
   fb_signin_btn.on('click', e => {
-  	firebase.auth().signInWithPopup(provider).then(function(result) {
+  	firebase.auth().signInWithPopup(fb_provider).then(function(result) {
 		  // This gives you a Facebook Access Token. You can use it to access the Facebook API.
 		  var token = result.credential.accessToken;
 		  // The signed-in user info.
@@ -110,7 +110,7 @@
 
   // Twitter Signin
   twitter_signin_btn.on('click', e => {
-  	firebase.auth().signInWithPopup(provider).then(function(result) {
+  	firebase.auth().signInWithPopup(twitter_provider).then(function(result) {
 		  // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
 		  // You can use these server side with your app's credentials to access the Twitter API.
 		  var token = result.credential.accessToken;
