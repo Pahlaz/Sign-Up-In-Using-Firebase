@@ -1,2 +1,2 @@
 # Sign-Up-In-Using-Firebase
-Implementing Firebase Authentivation
+Implementing Firebase Authentication
