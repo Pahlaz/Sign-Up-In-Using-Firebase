@@ -6,11 +6,11 @@
 	const logout_btn = $('#logout-btn');
 	const google_signin_btn = $('#google-signin-btn');
 	const fb_signin_btn = $('#fb-signin-btn');
-	const twitter_signin_btn = $('#twitter-signin-btn');
+	const github_signin_btn = $('#github-signin-btn');
 
 	var google_provider = new firebase.auth.GoogleAuthProvider();
 	var fb_provider = new firebase.auth.FacebookAuthProvider();
-	var twitter_provider = new firebase.auth.TwitterAuthProvider();
+	var github_provider = new firebase.auth.GithubAuthProvider();
 
 
 	// Initialize Firebase
@@ -24,6 +24,7 @@
   firebase.initializeApp(config);
 
 
+  // Basic User registration and login, logout
   // Register User Event
   reg_btn.on('click', e => {
   	const email = $('#email').val();
@@ -108,17 +109,15 @@
   });
 
 
-  // Twitter Signin
-  twitter_signin_btn.on('click', e => {
-  	firebase.auth().signInWithPopup(twitter_provider).then(function(result) {
-		  // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
-		  // You can use these server side with your app's credentials to access the Twitter API.
+  // Github Signin
+  github_signin_btn.on('click', e => {
+  	firebase.auth().signInWithPopup(github_provider).then(function(result) {
+		  // This gives you a GitHub Access Token. You can use it to access the GitHub API.
 		  var token = result.credential.accessToken;
-		  var secret = result.credential.secret;
 		  // The signed-in user info.
 		  var user = result.user;
 		  // ...
-		  alert("You are successfully login using Twitter");
+		  alert("You are successfully login using Github");
 		}).catch(function(error) {
 		  // Handle Errors here.
 		  var errorCode = error.code;
